@@ -12,6 +12,8 @@
 	<meta charset="utf-8">
 </head>
 <body>
+https://github.com/medharik/itsupdi12017
+
 
 <h1>les formualaires & les tableaux </h1>
 
@@ -19,7 +21,7 @@
 <!-- form>table>tr*3>td*2|datalist -->
 <form action="">
 	<table border="0" align="center">
-		<tr>g
+		<tr>
 			<td><label for="email">Email (*) : 	</label> </td>
 			<td><input type="email" name="email" id="email"  required="" placeholder="Email..."  ></td>
 		</tr>
@@ -52,11 +54,15 @@
 		</tr>
 <tr>
 	<td>Ville</td>
-	<td><select name="" id="">
-		<option value="">Casa</option>
-		<option value="">Rabat</option>
-		<option value="">Tanger</option>
-	</select></td>
+	<td>
+		<input type="text" list="villes" placeholder="Choissisez votre ville">
+<datalist id="villes">
+	<option value="">casa</option>
+	<option value="">canada</option>
+	<option value="">rabat</option>
+</datalist>
+
+	</td>
 </tr>
 		<tr>
 			<td></td>
