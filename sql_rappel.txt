@@ -1,0 +1,51 @@
+--creer une table
+create table client(
+id  int primary key auto_increment, 
+nom varchar(100),
+salaire float
+);
+-- creer avec clé étrangère : 
+create table facture (
+numfacture int primary key auto_increment, 
+
+datefacture date , 
+
+client_id int ,
+constraint foreign key (client_id) references client(id) on delete cascade
+)
+
+-- ajouter un nouveau enregistrement (record)
+	
+
+-- supprimer le client ayant id=90
+delete from client where id=90
+
+-- modifier le salaire en 9000 du client qui s'appelle ali
+
+update client set salaire=9000
+where nom = 'ali'
+--liste des clients ayant un salaire entre 10000 et 20000
+--select * client where  salaire between 10000 
+--and 20000
+ou 
+
+-- liste des produits ayant un nom qui commence par hp et un prix >1000
+SELECT nom
+FROM produit
+WHERE nom LIKE 'hp%'
+AND prix >1000
+
+-- on veut connaitre le nom de chaque client et le numfacture ayant réglé une facture le 2018-11-18
+--
+SELECT c.nom, f.numfacture
+FROM client c, facture f
+WHERE c.id = f.client_id
+and f.date ='2018-11-18'
+
+--
+SELECT c.nom, f.numfacture
+FROM client c join  facture f
+on c.id = f.client_id
+WHERE 
+ f.datefacture ='2018-11-18'
+
